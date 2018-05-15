@@ -6,10 +6,17 @@ public class Tile {
 
     private String terrain;
     private Unit occupier;
+    private boolean occupied = false;
 
     public Tile(){
         setTerrain("Plain");
-        occupier = new Unit();
+    }
+
+    public char draw(){
+        if (!occupied || occupier.isDefeated()){
+            return '-';
+        }else
+            return occupier.draw();
     }
 
     public String getTerrain() {
@@ -25,6 +32,11 @@ public class Tile {
     }
 
     public void setOccupier(Unit occupier) {
+        occupied = true;
         this.occupier = occupier;
+    }
+
+    public void removeOccupier(){
+        occupied = false;
     }
 }

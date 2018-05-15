@@ -10,7 +10,7 @@ public class VantageOne extends Skill{
         description = "If unit’s HP ≤ 25% and foe initiates combat, unit can counterattack before foe’s first attack.";
         skillType = Constants.SkillType.PassiveB;
         conditions = new Constants.SkillCondition[]{
-                Constants.SkillCondition.FoeIniateCombat,
+                Constants.SkillCondition.Defending,
                 Constants.SkillCondition.lt25
         };
     }

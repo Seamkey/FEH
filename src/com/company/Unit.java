@@ -3,7 +3,6 @@ package com.company;
 import com.company.skills.NoSkill;
 import com.company.skills.Skill;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Unit {
@@ -54,7 +53,9 @@ public class Unit {
         initSkills();
     }
 
-
+    /*
+    * Skill related methods
+    * */
     private void initSkills(){ //Make sure skill list is filled with objects
         for (int i=0; i<numSkills; i++){
             skills[i]= new NoSkill();
@@ -123,7 +124,9 @@ public class Unit {
         else return false;
     }
 
-
+    /*
+    * basic methods
+    * */
 
     @Override
     public String toString() {
@@ -133,6 +136,10 @@ public class Unit {
     public String toString(boolean verbose){
         return String.format("%s | %d/%dHP%nATK: %d SPD: %d%nDEF: %d RES: %d",
                 name, remainingHp, maxHp, str, spd, def, res);
+    }
+
+    public char draw(){ //TODO Actually do something here
+        return this.name.charAt(0);
     }
 
     public boolean equals(Unit unit) { //TODO Find other method of comparison. Maybe hashcode
